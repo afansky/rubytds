@@ -6,7 +6,7 @@ describe TDS::Configuration do
   end
 
   it 'initializes redirect url' do
-    configuration = TDS::Configuration.new('http://google.com')
+    configuration = TDS::Configuration.new(:redirect_url => 'http://google.com')
     configuration.redirect_url.should eq('http://google.com')
   end
 end

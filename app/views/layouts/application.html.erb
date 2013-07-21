@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rubytds</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <title>Ruby TDS</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <% stylesheet_link_tag "bootstrap", :media => "screen" %>
+
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "bootstrap" %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<h1>Hello world!</h1>
 <%= yield %>
 
 </body>
