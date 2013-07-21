@@ -5,9 +5,11 @@ class ConfigurationsController < ApplicationController
   end
 
   def create
-    configuration = TDS::Configuration.new(params[:tds_configuration])
-    configuration.save
+    @configuration = TDS::Configuration.new(params[:tds_configuration])
+    @configuration.save
 
-    redirect_to action: 'index'
+    @configurations = TDS::Configuration.all
+
+    render :index
   end
 end

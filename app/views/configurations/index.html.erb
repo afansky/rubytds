@@ -8,10 +8,20 @@
   </ul>
 </div>
 <div class="container">
-  <%= form_for @configuration, :url =>{:action => :create}, :html => {:class => 'form-horizontal'} do |c| %>
-  <fieldset>
-    <%= c.text_field :redirect_url %>
-    <%= c.submit :class => 'btn btn-primary' %>
-  </fieldset>
+  <% if @configuration.errors.any? %>
+      <div class="row">
+        <ul>
+          <% @configuration.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+
+  <%= form_for @configuration, :url => {:action => :create}, :html => {:class => 'form-horizontal'} do |c| %>
+      <fieldset>
+        <%= c.text_field :redirect_url %>
+        <%= c.submit :class => 'btn btn-primary' %>
+      </fieldset>
   <% end %>
 </div>
