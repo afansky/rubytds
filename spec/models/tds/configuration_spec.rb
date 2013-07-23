@@ -12,9 +12,16 @@ describe TDS::Configuration do
   end
 
   it 'saves redirect url to database' do
-    configuration = TDS::Configuration.create(redirect_url:'http://test.com')
+    configuration = TDS::Configuration.create(redirect_url: 'http://test.com')
 
     found = TDS::Configuration.find_by_redirect_url 'http://test.com'
     found.should_not be_nil
+  end
+
+  it 'initializes landing page' do
+    configuration = TDS::Configuration.new(redirect_url: 'http://redirect.com')
+    configuration.save
+
+    configuration.landing_url.should eq("land/#{configuration.id}")
   end
 end

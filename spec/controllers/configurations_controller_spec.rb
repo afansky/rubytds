@@ -11,7 +11,7 @@ describe ConfigurationsController do
   describe 'POST create' do
     it 'creates a configuration entry' do
       post :create, :tds_configuration => {:redirect_url => 'google.com'}
-      response.should redirect_to :action => :index
+      response.should be_success
     end
   end
 end

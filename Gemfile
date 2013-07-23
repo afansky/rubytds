@@ -33,6 +33,7 @@ group :test do
   gem 'webrat', '0.7.1'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'rspec-expectations'
 end
 
 # To use ActiveModel has_secure_password

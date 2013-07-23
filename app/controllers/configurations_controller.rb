@@ -6,7 +6,9 @@ class ConfigurationsController < ApplicationController
 
   def create
     @configuration = TDS::Configuration.new(params[:tds_configuration])
-    @configuration.save
+    if @configuration.save
+      @configuration = TDS::Configuration.new
+    end
 
     @configurations = TDS::Configuration.all
 
