@@ -1,11 +1,22 @@
 <div class="container">
-  <ul>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Landing url</th>
+      <th>Redirect url</th>
+    </tr>
+    </thead>
+    <tbody>
     <% @configurations.each do |config| %>
-        <li>
-          <%= config.landing_url %> => <%= config.redirect_url %>
-        </li>
+        <tr>
+          <td><%= config.id %></td>
+          <td><%= config.landing_url %></td>
+          <td><%= config.redirect_url %></td>
+        </tr>
     <% end %>
-  </ul>
+    </tbody>
+  </table>
 </div>
 <div class="container">
   <% if @configuration.errors.any? %>
@@ -20,7 +31,7 @@
 
   <%= form_for @configuration, :url => {:action => :create}, :html => {:class => 'form-horizontal'} do |c| %>
       <fieldset>
-        <%= c.text_field :redirect_url %>
+        <%= c.text_field :redirect_url, :placeholder => 'Enter redirect url' %>
         <%= c.submit :class => 'btn btn-primary' %>
       </fieldset>
   <% end %>
