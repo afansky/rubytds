@@ -28,11 +28,14 @@
         </ul>
       </div>
   <% end %>
-
-  <%= form_for @configuration, :url => {:action => :create}, :html => {:class => 'form-horizontal'} do |c| %>
-      <fieldset>
-        <%= c.text_field :redirect_url, :placeholder => 'Enter redirect url' %>
-        <%= c.submit :class => 'btn btn-primary' %>
-      </fieldset>
-  <% end %>
+  <div class="span9">
+    <%= form_for @configuration, :url => {:action => :create}, :html => {:class => 'form-horizontal'} do |c| %>
+        <div class="control-group">
+          <fieldset>
+            <%= c.text_field :redirect_url, :placeholder => 'Enter redirect url' %>
+            <%= c.submit :class => 'btn btn-primary' %>
+          </fieldset>
+        </div>
+    <% end %>
+  </div>
 </div>
