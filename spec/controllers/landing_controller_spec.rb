@@ -6,4 +6,9 @@ describe LandingController do
     get :land, {:id => configuration.id}
     response.should redirect_to configuration.redirect_url
   end
+
+  it 'returns 404 for unknown id' do
+    get :land, {:id => 707}
+    response.response_code.should == 404
+  end
 end
