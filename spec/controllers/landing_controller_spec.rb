@@ -11,4 +11,10 @@ describe LandingController do
     get :land, {:id => 707}
     response.response_code.should == 404
   end
+
+  it 'should create a visitor for the configuration' do
+    configuration = TDS::Configuration.create(:redirect_url => 'http://google.com')
+    get :land, {:id => configuration.id}
+    configuration.visitors.should_not be_empty
+  end
 end

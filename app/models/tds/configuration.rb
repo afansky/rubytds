@@ -1,4 +1,5 @@
 class TDS::Configuration < ActiveRecord::Base
+  has_many :visitors
   attr_accessible :redirect_url, :landing_url
   validates :redirect_url, presence: true
   after_create :set_landing_url
