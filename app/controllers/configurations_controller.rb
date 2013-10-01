@@ -11,7 +11,14 @@ class ConfigurationsController < ApplicationController
     end
 
     @configurations = TDS::Configuration.all
+    render :index
+  end
 
+  def destroy
+    TDS::Configuration.destroy(params[:id])
+
+    @configuration = TDS::Configuration.new
+    @configurations = TDS::Configuration.all
     render :index
   end
 end

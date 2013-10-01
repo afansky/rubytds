@@ -14,4 +14,13 @@ describe ConfigurationsController do
       response.should be_success
     end
   end
+
+  describe 'DELETE delete' do
+    it 'deletes a configuration' do
+      configuration = TDS::Configuration.create(:redirect_url => 'http://google.com')
+      expect {
+        delete :destroy, :id => configuration.id
+      }.to change(TDS::Configuration, :count).by(-1)
+    end
+  end
 end

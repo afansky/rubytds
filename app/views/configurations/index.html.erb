@@ -5,6 +5,7 @@
       <th>#</th>
       <th>Landing url</th>
       <th>Redirect url</th>
+      <th></th>
     </tr>
     </thead>
     <tbody>
@@ -13,6 +14,7 @@
           <td><%= config.id %></td>
           <td><%= config.landing_url %></td>
           <td><%= config.redirect_url %></td>
+          <td><%= button_to 'Delete', configuration_path(config.id), :method => :delete, :class => 'btn btn-danger', :confirm => 'Delete configuration?' %></td>
         </tr>
     <% end %>
     </tbody>
