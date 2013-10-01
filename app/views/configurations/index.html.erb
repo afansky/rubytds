@@ -12,8 +12,8 @@
     <% @configurations.each do |config| %>
         <tr>
           <td><%= config.id %></td>
-          <td><%= config.landing_url %></td>
-          <td><%= config.redirect_url %></td>
+          <td><%= link_to config.landing_url, config.landing_url %></td>
+          <td><%= link_to config.redirect_url, config.redirect_url %></td>
           <td><%= button_to 'Delete', configuration_path(config.id), :method => :delete, :class => 'btn btn-danger', :confirm => 'Delete configuration?' %></td>
         </tr>
     <% end %>
