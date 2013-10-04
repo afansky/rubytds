@@ -57,4 +57,5 @@ Rubytds::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
   resources :configurations
   match 'land/:id' => 'landing#land'
+  match 'configuration/:id/visitors' => 'visitors#show_by_configuration'
 end

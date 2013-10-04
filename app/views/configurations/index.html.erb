@@ -15,7 +15,7 @@
           <td><%= config.id %></td>
           <td><%= link_to config.landing_url, config.landing_url %></td>
           <td><%= link_to config.redirect_url, config.redirect_url %></td>
-          <td><%= config.visitors.length %></td>
+          <td><%= link_to config.visitors.length, {:controller => :visitors, :action => :show_by_configuration, :id => config.id} %></td>
           <td><%= button_to 'Delete', configuration_path(config.id), :method => :delete, :class => 'btn btn-danger', :confirm => 'Delete configuration?' %></td>
         </tr>
     <% end %>

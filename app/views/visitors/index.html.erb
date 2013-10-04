@@ -1,0 +1,20 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>IP Address</th>
+      <th>Referer</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @visitors.each do |visitor| %>
+        <tr>
+          <td><%= visitor.id %></td>
+          <td><%= visitor.ip_address %></td>
+          <td><%= visitor.referer %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
